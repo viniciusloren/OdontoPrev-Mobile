@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Menu no topo da tela -->
+    <Button
+        android:id="@+id/button_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <!-- Título do Prontuário -->
+    <TextView
+        android:id="@+id/text_prontuario_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prontuário Paciente"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_below="@id/button_menu"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentStart="true" />
+
+    <!-- Campo do Tipo de Plano -->
+    <TextView
+        android:id="@+id/text_tipo_plano_prontuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de Plano"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/text_prontuario_title"
+        android:layout_marginTop="16dp" />
+
+    <Spinner
+        android:id="@+id/spinner_tipo_plano_prontuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_tipo_plano_prontuario"
+        android:layout_marginTop="8dp" />
+
+    <!-- Campo para descrição dos sintomas -->
+    <EditText
+        android:id="@+id/edit_descricao_sintomas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descrição dos Sintomas"
+        android:layout_below="@id/spinner_tipo_plano_prontuario"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botão para enviar o prontuário -->
+    <Button
+        android:id="@+id/button_enviar_prontuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar Prontuário"
+        android:layout_below="@id/edit_descricao_sintomas"
+        android:layout_marginTop="16dp" />
+</RelativeLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edit_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome" />
+
+    <EditText
+        android:id="@+id/edit_sobrenome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sobrenome"
+        android:layout_below="@id/edit_nome"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:layout_below="@id/edit_sobrenome"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/edit_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:layout_below="@id/edit_email"
+        android:layout_marginTop="16dp"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/edit_data_nascimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data de Nascimento"
+        android:layout_below="@id/edit_senha"
+        android:layout_marginTop="16dp" />
+
+    <!-- Título do Spinner -->
+    <TextView
+        android:id="@+id/text_tipo_plano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de Plano"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/edit_data_nascimento"
+        android:layout_marginTop="16dp" />
+
+    <!-- Spinner para o tipo de plano -->
+    <Spinner
+        android:id="@+id/spinner_plano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_tipo_plano"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/edit_cep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CEP"
+        android:layout_below="@id/spinner_plano"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/button_cadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:layout_below="@id/edit_cep"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>
