@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:padding="16dp">
 
     <TextView
@@ -10,7 +11,8 @@
         android:layout_height="wrap_content"
         android:text="Contato"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_dark" />
 
     <EditText
         android:id="@+id/edit_nome_contato"
@@ -18,7 +20,8 @@
         android:layout_height="wrap_content"
         android:hint="Nome"
         android:layout_below="@id/text_view_contato"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_background" />
 
     <EditText
         android:id="@+id/edit_email_contato"
@@ -27,7 +30,8 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:layout_below="@id/edit_nome_contato"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background" />
 
     <Button
         android:id="@+id/button_enviar_contato"
@@ -35,7 +39,9 @@
         android:layout_height="wrap_content"
         android:text="Enviar"
         android:layout_below="@id/edit_email_contato"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/button_voltar_contato"
@@ -44,6 +50,8 @@
         android:text="Voltar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
 
 </RelativeLayout>

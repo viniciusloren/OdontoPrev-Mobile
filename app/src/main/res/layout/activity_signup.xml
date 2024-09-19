@@ -2,19 +2,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastro"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_dark" />
 
     <EditText
         android:id="@+id/edit_nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome" />
+        android:hint="Nome"
+        android:background="@drawable/edit_text_background"
+        android:layout_below="@id/title_signup"
+        android:layout_marginTop="24dp" />
 
     <EditText
         android:id="@+id/edit_sobrenome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Sobrenome"
+        android:background="@drawable/edit_text_background"
         android:layout_below="@id/edit_nome"
         android:layout_marginTop="16dp" />
 
@@ -23,6 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
+        android:background="@drawable/edit_text_background"
+        android:inputType="textEmailAddress"
         android:layout_below="@id/edit_sobrenome"
         android:layout_marginTop="16dp" />
 
@@ -31,19 +47,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Senha"
+        android:background="@drawable/edit_text_background"
+        android:inputType="textPassword"
         android:layout_below="@id/edit_email"
-        android:layout_marginTop="16dp"
-        android:inputType="textPassword" />
+        android:layout_marginTop="16dp" />
 
     <EditText
         android:id="@+id/edit_data_nascimento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Data de Nascimento"
+        android:background="@drawable/edit_text_background"
         android:layout_below="@id/edit_senha"
         android:layout_marginTop="16dp" />
 
-    <!-- Título do Spinner -->
     <TextView
         android:id="@+id/text_tipo_plano"
         android:layout_width="wrap_content"
@@ -51,14 +68,15 @@
         android:text="Tipo de Plano"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_dark"
         android:layout_below="@id/edit_data_nascimento"
         android:layout_marginTop="16dp" />
 
-    <!-- Spinner para o tipo de plano -->
     <Spinner
         android:id="@+id/spinner_plano"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/spinner_background"
         android:layout_below="@id/text_tipo_plano"
         android:layout_marginTop="8dp" />
 
@@ -67,6 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="CEP"
+        android:background="@drawable/edit_text_background"
         android:layout_below="@id/spinner_plano"
         android:layout_marginTop="16dp" />
 
@@ -75,6 +94,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cadastrar"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
         android:layout_below="@id/edit_cep"
         android:layout_marginTop="16dp" />
 

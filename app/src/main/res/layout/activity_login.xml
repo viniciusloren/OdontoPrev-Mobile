@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:padding="16dp">
 
     <TextView
@@ -9,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_blue_dark" />
 
     <EditText
         android:id="@+id/email_login"
@@ -18,7 +20,8 @@
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:layout_below="@id/title_login"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_background" />
 
     <EditText
         android:id="@+id/password_login"
@@ -27,7 +30,8 @@
         android:hint="Senha"
         android:inputType="textPassword"
         android:layout_below="@id/email_login"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background" />
 
     <Button
         android:id="@+id/button_login"
@@ -35,7 +39,9 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:layout_below="@id/password_login"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/link_signup"
@@ -45,4 +51,5 @@
         android:textColor="@android:color/holo_blue_dark"
         android:layout_below="@id/button_login"
         android:layout_marginTop="16dp" />
+
 </RelativeLayout>
