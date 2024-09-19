@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -26,23 +27,18 @@ class ProntuarioActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerTipoPlano.adapter = adapter
 
-        // Configurar o botão do menu
         val buttonMenu = findViewById<Button>(R.id.button_menu)
         buttonMenu.setOnClickListener { view ->
             showPopupMenu(view)
         }
 
-        // Configurar o botão de enviar prontuário
         val buttonEnviarProntuario = findViewById<Button>(R.id.button_enviar_prontuario)
         buttonEnviarProntuario.setOnClickListener {
-            // Lógica para enviar o prontuário
             val tipoPlano = spinnerTipoPlano.selectedItem.toString()
             val descricaoSintomas = findViewById<EditText>(R.id.edit_descricao_sintomas).text.toString()
 
-            // Exibir mensagem de sucesso
             Toast.makeText(this, "Prontuário enviado ao dentista com sucesso", Toast.LENGTH_LONG).show()
 
-            // Aqui você pode adicionar a lógica para enviar os dados para o servidor ou para onde for necessário
         }
     }
 
@@ -52,15 +48,18 @@ class ProntuarioActivity : AppCompatActivity() {
         popupMenu.setOnMenuItemClickListener { item: MenuItem ->
             when (item.itemId) {
                 R.id.menu_historico -> {
-                    // Lógica para abrir tela de histórico
+                    val intent = Intent(this, HistoricoActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.menu_contato -> {
-                    // Lógica para abrir tela de contato
+                    val intent = Intent(this, ContatoActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.menu_sair -> {
-                    // Lógica para sair ou fazer logout
+                    val intent = Intent(this, ConfirmarSaidaActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false
@@ -68,4 +67,5 @@ class ProntuarioActivity : AppCompatActivity() {
         }
         popupMenu.show()
     }
+
 }

@@ -24,7 +24,6 @@ class LoginActivity : AppCompatActivity() {
             val email = findViewById<EditText>(R.id.email_login).text.toString()
             val password = findViewById<EditText>(R.id.password_login).text.toString()
 
-            // Aqui você pode implementar a lógica de autenticação e, após o login bem-sucedido:
             val intent = Intent(this, ProntuarioActivity::class.java)
             startActivity(intent)
         }

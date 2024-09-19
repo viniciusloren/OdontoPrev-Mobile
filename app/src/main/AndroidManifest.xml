@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".ProntuarioActivity" />
+        <activity android:name=".HistoricoActivity" />
+        <activity android:name=".ContatoActivity" />
+        <activity android:name=".ConfirmarSaidaActivity" />
         <activity android:name="com.example.myapplication.LoginActivity"
             android:exported="true">
             <intent-filter>
