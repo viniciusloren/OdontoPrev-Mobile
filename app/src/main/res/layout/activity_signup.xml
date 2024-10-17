@@ -80,6 +80,15 @@
         android:layout_below="@id/text_tipo_plano"
         android:layout_marginTop="8dp" />
 
+    <Spinner
+        android:id="@+id/spinner_sexo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/spinner_background"
+        android:layout_below="@id/edit_data_nascimento"
+        android:layout_marginTop="16dp" />
+
+
     <EditText
         android:id="@+id/edit_cep"
         android:layout_width="match_parent"

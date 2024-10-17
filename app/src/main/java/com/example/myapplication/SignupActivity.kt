@@ -20,15 +20,30 @@ class SignupActivity : AppCompatActivity() {
         val editSenha = findViewById<EditText>(R.id.edit_senha)
         val editDataNascimento = findViewById<EditText>(R.id.edit_data_nascimento)
         val spinnerPlano = findViewById<Spinner>(R.id.spinner_plano)
+        val spinnerSexo = findViewById<Spinner>(R.id.spinner_sexo)  // Spinner para sexo
         val editCep = findViewById<EditText>(R.id.edit_cep)
         val buttonCadastrar = findViewById<Button>(R.id.button_cadastrar)
 
         val planos = arrayOf("Integral MEI", "Integral PME", "Master PME")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, planos)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerPlano.adapter = adapter
+        val adapterPlano = ArrayAdapter(this, android.R.layout.simple_spinner_item, planos)
+        adapterPlano.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerPlano.adapter = adapterPlano
+
+        val sexos = arrayOf("Masculino", "Feminino", "Outro")
+        val adapterSexo = ArrayAdapter(this, android.R.layout.simple_spinner_item, sexos)
+        adapterSexo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerSexo.adapter = adapterSexo
 
         buttonCadastrar.setOnClickListener {
+            val nome = editNome.text.toString()
+            val sobrenome = editSobrenome.text.toString()
+            val email = editEmail.text.toString()
+            val senha = editSenha.text.toString()
+            val dataNascimento = editDataNascimento.text.toString()
+            val planoSelecionado = spinnerPlano.selectedItem.toString()
+            val sexoSelecionado = spinnerSexo.selectedItem.toString()
+            val cep = editCep.text.toString()
+
 
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
