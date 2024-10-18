@@ -7,6 +7,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.Model.User
+import com.example.myapplication.Network.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignupActivity : AppCompatActivity() {
 
@@ -35,19 +40,32 @@ class SignupActivity : AppCompatActivity() {
         spinnerSexo.adapter = adapterSexo
 
         buttonCadastrar.setOnClickListener {
-            val nome = editNome.text.toString()
-            val sobrenome = editSobrenome.text.toString()
-            val email = editEmail.text.toString()
-            val senha = editSenha.text.toString()
-            val dataNascimento = editDataNascimento.text.toString()
-            val planoSelecionado = spinnerPlano.selectedItem.toString()
-            val sexoSelecionado = spinnerSexo.selectedItem.toString()
-            val cep = editCep.text.toString()
+            val user = User(
+                nome = editNome.text.toString(),
+                sobrenome = editSobrenome.text.toString(),
+                email = editEmail.text.toString(),
+                senha = editSenha.text.toString(),
+                dataNascimento = editDataNascimento.text.toString(),
+                planoSelecionado = spinnerPlano.selectedItem.toString(),
+                sexoSelecionado = spinnerSexo.selectedItem.toString(),
+                cep = editCep.text.toString()
+            )
 
+            // Chamando a API para realizar o signup
+            RetrofitClient.api.signup(user).enqueue(object : Callback<Void> {
+                override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                    // Não exibir mensagens de erro, apenas prosseguir
+                    // Mesmo que a resposta não seja bem-sucedida, o usuário será direcionado para a próxima tela
+                    startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
+                    finish()
+                }
 
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
+                override fun onFailure(call: Call<Void>, t: Throwable) {
+                    // Não exibir mensagens de erro, apenas prosseguir
+                    startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
+                    finish()
+                }
+            })
         }
     }
 }
