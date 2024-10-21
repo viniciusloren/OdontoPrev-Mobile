@@ -29,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
             val email = findViewById<EditText>(R.id.email_login).text.toString()
             val password = findViewById<EditText>(R.id.password_login).text.toString()
 
-            // Validar se os campos não estão vazios
             if (email.isBlank() || password.isBlank()) {
                 Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -40,7 +39,6 @@ class LoginActivity : AppCompatActivity() {
                 "senha" to password
             )
 
-            // Iniciar a chamada da API
             try {
                 RetrofitClient.api.login(credentials).enqueue(object : retrofit2.Callback<Void> {
                     override fun onResponse(call: Call<Void>, response: Response<Void>) {

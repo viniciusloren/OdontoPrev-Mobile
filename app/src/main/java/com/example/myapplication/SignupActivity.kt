@@ -25,7 +25,7 @@ class SignupActivity : AppCompatActivity() {
         val editSenha = findViewById<EditText>(R.id.edit_senha)
         val editDataNascimento = findViewById<EditText>(R.id.edit_data_nascimento)
         val spinnerPlano = findViewById<Spinner>(R.id.spinner_plano)
-        val spinnerSexo = findViewById<Spinner>(R.id.spinner_sexo)  // Spinner para sexo
+        val spinnerSexo = findViewById<Spinner>(R.id.spinner_sexo)
         val editCep = findViewById<EditText>(R.id.edit_cep)
         val buttonCadastrar = findViewById<Button>(R.id.button_cadastrar)
 
@@ -51,17 +51,13 @@ class SignupActivity : AppCompatActivity() {
                 cep = editCep.text.toString()
             )
 
-            // Chamando a API para realizar o signup
             RetrofitClient.api.signup(user).enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                    // Não exibir mensagens de erro, apenas prosseguir
-                    // Mesmo que a resposta não seja bem-sucedida, o usuário será direcionado para a próxima tela
                     startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
                     finish()
                 }
 
                 override fun onFailure(call: Call<Void>, t: Throwable) {
-                    // Não exibir mensagens de erro, apenas prosseguir
                     startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
                     finish()
                 }

@@ -21,17 +21,14 @@ class ContatoActivity : AppCompatActivity() {
             val nome = editNome.text.toString()
             val email = editEmail.text.toString()
 
-            // Exibir mensagem de sucesso
             Toast.makeText(this, "Sucesso! Logo entraremos em contato!", Toast.LENGTH_LONG).show()
 
-            // Limpar os campos
             editNome.text.clear()
             editEmail.text.clear()
         }
 
-        // Configurar o botão Voltar
         buttonVoltar.setOnClickListener {
-            finish() // Fecha a atividade atual e retorna à anterior
+            finish()
         }
     }
 }
