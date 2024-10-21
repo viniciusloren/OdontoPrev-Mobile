@@ -9,14 +9,15 @@ import androidx.recyclerview.widget.RecyclerView
 class HistoricoAdapter(private val consultas: List<Consulta>) : RecyclerView.Adapter<HistoricoAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textData: TextView = view.findViewById(R.id.text_data)
-        val textMotivo: TextView = view.findViewById(R.id.text_motivo)
-        val textMedico: TextView = view.findViewById(R.id.text_medico)
-        val textEspecialidade: TextView = view.findViewById(R.id.text_especialidade)
+        val textData: TextView = view.findViewById(R.id.text_view_data) // Corrigido
+        val textMotivo: TextView = view.findViewById(R.id.text_view_motivo) // Corrigido
+        val textMedico: TextView = view.findViewById(R.id.text_view_medico) // Corrigido
+        val textEspecialidade: TextView = view.findViewById(R.id.text_view_especialidade) // Corrigido
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_historico, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_historico, parent, false)
         return ViewHolder(view)
     }
 
@@ -28,5 +29,7 @@ class HistoricoAdapter(private val consultas: List<Consulta>) : RecyclerView.Ada
         holder.textEspecialidade.text = "Especialidade: ${consulta.especialidade}"
     }
 
-    override fun getItemCount() = consultas.size
+    override fun getItemCount(): Int {
+        return consultas.size
+    }
 }

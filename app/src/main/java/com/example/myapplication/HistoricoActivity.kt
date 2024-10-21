@@ -13,13 +13,10 @@ class HistoricoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_historico) // Certifique-se de que o layout correto está sendo usado
-
-        // Inicializando o RecyclerView
+        setContentView(R.layout.activity_historico)
         recyclerView = findViewById(R.id.recycler_view_historico)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Lista de consultas
         val consultas = listOf(
             Consulta("01/01/2023", "Check-up", "Dr. João", "Odontologia"),
             Consulta("15/02/2023", "Dor de Dente", "Dra. Ana", "Endodontia"),
@@ -28,19 +25,16 @@ class HistoricoActivity : AppCompatActivity() {
             Consulta("05/05/2023", "Avaliação", "Dr. Lucas", "Ortodontia")
         )
 
-        // Configurando o Adapter
         val adapter = HistoricoAdapter(consultas)
         recyclerView.adapter = adapter
 
-        // Inicializando o botão Voltar
-        buttonVoltar = findViewById(R.id.button_voltar_historico)
+        buttonVoltar = findViewById(R.id.butao_voltar_historico)
         buttonVoltar.setOnClickListener {
-            finish() // Finaliza a atividade atual e retorna à anterior
+            finish()
         }
     }
 }
 
-// Data class para armazenar informações da consulta
 data class Consulta(
     val data: String,
     val motivo: String,
