@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="?attr/selectableItemBackground">
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/text_data"
+        android:id="@+id/text_historico_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Histórico de Consultas"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textSize="16sp" />
+        android:textColor="@android:color/holo_blue_dark" />
 
-    <TextView
-        android:id="@+id/text_motivo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_historico"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@id/text_historico_title"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="56dp" /> <!-- Adicionando margem inferior -->
 
-    <TextView
-        android:id="@+id/text_medico"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/button_voltar_historico"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp" />
+        android:text="Voltar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
 
-    <TextView
-        android:id="@+id/text_especialidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp" />
-</LinearLayout>
+</RelativeLayout>

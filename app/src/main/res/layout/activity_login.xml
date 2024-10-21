@@ -3,15 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:padding="16dp">
+    android:padding="24dp">
 
     <TextView
         android:id="@+id/title_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:textSize="24sp"
-        android:textColor="@android:color/holo_blue_dark" />
+        android:textSize="32sp"
+        android:textColor="@color/blue_dark"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp" />
 
     <EditText
         android:id="@+id/email_login"
@@ -20,8 +23,11 @@
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:layout_below="@id/title_login"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/edit_text_background" />
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:textColor="@color/blue_dark"
+        android:layout_marginBottom="16dp"
+        android:drawablePadding="8dp" />
 
     <EditText
         android:id="@+id/password_login"
@@ -30,26 +36,30 @@
         android:hint="Senha"
         android:inputType="textPassword"
         android:layout_below="@id/email_login"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background" />
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:textColor="@color/blue_dark"
+        android:layout_marginBottom="24dp"
+        android:drawablePadding="8dp" />
 
     <Button
         android:id="@+id/button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:textColor="@android:color/white"
         android:layout_below="@id/password_login"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:textColor="@android:color/white" />
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/blue_light" />
 
     <TextView
         android:id="@+id/link_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Não tem cadastro? Cadastre-se aqui"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/blue_dark"
         android:layout_below="@id/button_login"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

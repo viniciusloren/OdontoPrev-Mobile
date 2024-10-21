@@ -15,7 +15,6 @@
         android:backgroundTint="@android:color/holo_blue_light"
         android:textColor="@android:color/white" />
 
-    <!-- Título do Prontuário -->
     <TextView
         android:id="@+id/text_prontuario_title"
         android:layout_width="wrap_content"
@@ -36,7 +35,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_below="@id/text_prontuario_title"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="24dp"
+        android:textColor="@android:color/holo_blue_dark" />
 
     <Spinner
         android:id="@+id/spinner_tipo_plano_prontuario"
@@ -53,7 +53,10 @@
         android:hint="Descrição dos Sintomas"
         android:layout_below="@id/spinner_tipo_plano_prontuario"
         android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background" />
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:drawablePadding="8dp" />
 
     <Button
         android:id="@+id/button_enviar_prontuario"
@@ -61,7 +64,7 @@
         android:layout_height="wrap_content"
         android:text="Enviar Prontuário"
         android:layout_below="@id/edit_descricao_sintomas"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:textColor="@android:color/white" />
 
